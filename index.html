@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <title>Analytics Dashboard</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <h5 class="my-4">Architect</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-tachometer-alt"></i> Painel de controle
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./analytics/analytics.html">
+                                <i class="fas fa-chart-line"></i> Financeiro
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./mensalidades/mensalidade.html">
+                                <i class="fas fa-file-alt"></i> Mensalidades
+                            </a>
+                        </li>
+                    </ul>
+                    
+            </nav>
+
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-4 content" role="main">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Analytics Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button class="btn btn-sm btn-outline-secondary" type="button">Share</button>
+                            <button class="btn btn-sm btn-outline-secondary" type="button">Export</button>
+                        </div>
+                        <button class="btn btn-sm btn-custom" type="button">Create New</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Desempenho do Portfólio</div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between text-center">
+                            <!-- Valor Total que Entrou no Mês -->
+                            <div class="p-2">
+                                <h5>Entrada Mensal</h5>
+                                <h2>R$ 100.000</h2>
+                                <p class="text-success">Total recebido neste mês</p>
+                            </div>
+                
+                            <!-- Investimentos Feitos no Mês -->
+                            <div class="p-2">
+                                <h5>Investimentos Mensais</h5>
+                                <h2>R$ 50.000</h2>
+                                <p class="text-primary">Total investido neste mês</p>
+                            </div>
+                
+                            <!-- Valor Total Arrecadado Anualmente -->
+                            <div class="p-2">
+                                <h5>Arrecadação Anual</h5>
+                                <h2>R$ 1.200.000</h2>
+                                <p class="text-success">Total arrecadado no ano</p>
+                            </div>
+                
+                            <!-- Valor de Gastos Anuais -->
+                            <div class="p-2">
+                                <h5>Gastos Anuais</h5>
+                                <h2>R$ 300.000</h2>
+                                <p class="text-danger">Total gasto no ano</p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button class="btn btn-custom" type="button">Ver Relatório Completo</button>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="card">
+                    <div class="card-header">Artilharia</div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Jogador</th>
+                                    <th>Nome</th>
+                                    <th>Posição</th>
+                                    <th>Status da mensalidade</th>
+                                    <th>Gols</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#54</td>
+                                    <td><img src="https://example.com/avatar1.png" alt="Avatar of Juan C. Cargill"
+                                            class="rounded-circle" height="50" width="50" /></td>
+                                    <td>Gabriel chiclete</td>
+                                    <td>Atacante</td>
+                                    <td class="status-canceled">Em dia</td>
+                                    <td>43</td>
+                                </tr>
+                                <tr>
+                                    <td>#54</td>
+                                    <td><img src="https://example.com/avatar1.png" alt="Avatar of Juan C. Cargill"
+                                            class="rounded-circle" height="50" width="50" /></td>
+                                    <td>Phelipe</td>
+                                    <td>Atacante</td>
+                                    <td class="status-canceled">Em dia</td>
+                                    <td>23</td>
+                                </tr>
+                                <tr>
+                                    <td>#54</td>
+                                    <td><img src="https://example.com/avatar1.png" alt="Avatar of Juan C. Cargill"
+                                            class="rounded-circle" height="50" width="50" /></td>
+                                    <td>Gabriel Moço</td>
+                                    <td>Atacante</td>
+                                    <td class="status-canceled">Em dia</td>
+                                    <td>22</td>
+                                </tr>
+                                <tr>
+                                    <td>#54</td>
+                                    <td><img src="https://example.com/avatar1.png" alt="Avatar of Juan C. Cargill"
+                                            class="rounded-circle" height="50" width="50" /></td>
+                                    <td>Piolho</td>
+                                    <td>Atacante</td>
+                                    <td class="status-canceled">Em dia</td>
+                                    <td>16</td>
+                                </tr>
+                                <tr>
+                                    <td>#54</td>
+                                    <td><img src="https://example.com/avatar1.png" alt="Avatar of Juan C. Cargill"
+                                            class="rounded-circle" height="50" width="50" /></td>
+                                    <td>Bob</td>
+                                    <td>Meia</td>
+                                    <td class="status-canceled">Em dia</td>
+                                    <td>13</td>
+                                </tr>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </main>
+        </div>
+    </div>
+
+    <script crossorigin="anonymous" integrity="sha384-QFhWHeoeEzhdHp2lWKE/kqE0ouS/PjXMTx2Dgo1s/XzF7Mc5ZqhL6PF8fdQ9qjlg"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

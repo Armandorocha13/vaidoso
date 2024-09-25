@@ -1,0 +1,66 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    background-color: #ffffff;
+    height: 100vh;
+    padding: 20px;
+    border-right: 1px solid #dee2e6;
+}
+
+.sidebar .nav-link {
+    color: #495057;
+}
+
+.sidebar .nav-link.active {
+    font-weight: bold;
+}
+
+.content {
+    padding: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.card-body {
+    background-color: #ffffff;
+}
+
+.btn-custom {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+}
+
+.status-canceled {
+    color: #dc3545;
+}
+
+.status-onhold {
+    color: #ffc107;
+}
+
+.status-inprogress {
+    color: #17a2b8;
+}
+
+.status-completed {
+    color: #28a745;
+}
+
+.progress-bar {
+    height: 20px;
+}

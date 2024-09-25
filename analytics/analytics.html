@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Financeiro</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .form-control:disabled {
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Painel Financeiro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Relatórios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Configurações</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <div class="col-md-12 text-center">
+                <h2>Desempenho Financeiro</h2>
+                <p class="text-muted">Atualize os valores abaixo para calcular suas finanças.</p>
+            </div>
+        </div>
+
+        <!-- Inputs para edição -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <form id="financialForm" class="bg-white p-4 rounded">
+                    <div class="mb-3">
+                        <label for="valorDiario" class="form-label">Valor do domingo (R$):</label>
+                        <input type="number" id="valorDiario" class="form-control" value="0" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="entradaMensal" class="form-label">Entrada Mensal (R$):</label>
+                        <input type="number" id="entradaMensal" class="form-control" value="0" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="investimentosMensais" class="form-label">Investimentos Mensais (R$):</label>
+                        <input type="number" id="investimentosMensais" class="form-control" value="0" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="arrecadacaoAnual" class="form-label">Arrecadação Anual (R$):</label>
+                        <input type="number" id="arrecadacaoAnual" class="form-control" value="0" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="gastosAnuais" class="form-label">Gastos Anuais (R$):</label>
+                        <input type="number" id="gastosAnuais" class="form-control" value="0" readonly>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" id="confirmButton">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Gráfico -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <canvas id="financialChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Seletor de Mês -->
+<div class="row justify-content-center mt-4">
+    <div class="col-md-4">
+        <label for="mesSelecionado">Selecione o Mês:</label>
+        <select id="mesSelecionado" class="form-select" onchange="atualizarHistoricoEGrafico()">
+            <option value="">Selecione...</option>
+            <option value="Janeiro">Janeiro</option>
+            <option value="Fevereiro">Fevereiro</option>
+            <option value="Março">Março</option>
+            <option value="Abril">Abril</option>
+            <option value="Maio">Maio</option>
+            <option value="Junho">Junho</option>
+            <option value="Julho">Julho</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Setembro">Setembro</option>
+            <option value="Outubro">Outubro</option>
+            <option value="Novembro">Novembro</option>
+            <option value="Dezembro">Dezembro</option>
+        </select>
+    </div>
+</div>
+
+<!-- Histórico Financeiro Mensal -->
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Histórico Financeiro Mensal</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mês</th>
+                            <th>Entrada Mensal (R$)</th>
+                            <th>Investimentos Mensais (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="financialHistory">
+                        <!-- Os dados serão inseridos aqui dinamicamente -->
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <h5>Total Acumulado: R$ <span id="totalAcumulado">0.00</span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Scripts -->
+    <script src="../js/analytics.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
