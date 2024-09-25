@@ -9,101 +9,113 @@
 </head>
 <body>
 
-<!-- Botão de Voltar -->
-<button onclick="window.history.back();" class="btn btn-secondary m-3">
-    <a href="../index.html"><i class="fas fa-arrow-left"></i> Voltar</a>
-</button>
+<header>
+    <!-- Botão de Voltar -->
+    <nav>
+        <button onclick="window.history.back();" class="btn btn-secondary m-3">
+            <a href="../index.html"><i class="fas fa-arrow-left"></i> Voltar</a>
+        </button>
+    </nav>
+</header>
 
-<div class="container mt-5">
-    <h2 class="mb-4" id="cadastro">Cadastro de Atleta</h2>
-    <form id="athleteForm">
-        <div class="form-group">
-            <label for="athleteName">Nome do Atleta</label>
-            <input type="text" class="form-control" id="athleteName" required>
-        </div>
-        <div class="form-group">
-            <label for="athleteWhatsApp">Número do WhatsApp</label>
-            <input type="text" class="form-control" id="athleteWhatsApp" required>
-        </div>
-        <div class="form-group">
-            <label for="paymentMonth">Mês de Pagamento</label>
-            <select class="form-control" id="paymentMonth" required>
-                <option value="">Selecione</option>
-                <option value="Janeiro">Janeiro</option>
-                <option value="Fevereiro">Fevereiro</option>
-                <option value="Março">Março</option>
-                <option value="Abril">Abril</option>
-                <option value="Maio">Maio</option>
-                <option value="Junho">Junho</option>
-                <option value="Julho">Julho</option>
-                <option value="Agosto">Agosto</option>
-                <option value="Setembro">Setembro</option>
-                <option value="Outubro">Outubro</option>
-                <option value="Novembro">Novembro</option>
-                <option value="Dezembro">Dezembro</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="feeType">Tipo de Taxa</label>
-            <select class="form-control" id="feeType" required>
-                <option value="">Selecione</option>
-                <option value="Mensalidade">Mensalidade</option>
-                <option value="Taxa de Inscrição">Taxa de Inscrição</option>
-                <option value="Taxa de Manutenção">Taxa de Manutenção</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="athletePayment">Pagamento Mensalidade</label>
-            <select class="form-control" id="athletePayment" required>
-                <option value="">Selecione</option>
-                <option value="pago">Pago</option>
-                <option value="pendente">Pendente</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Cadastrar Atleta</button>
-    </form>
+<main class="container mt-5">
+    <section aria-labelledby="cadastro">
+        <h2 class="mb-4" id="cadastro">Cadastro de Atleta</h2>
+        <form id="athleteForm">
+            <div class="form-group">
+                <label for="athleteName">Nome do Atleta</label>
+                <input type="text" class="form-control" id="athleteName" required>
+            </div>
+            <div class="form-group">
+                <label for="athleteWhatsApp">Número do WhatsApp</label>
+                <input type="text" class="form-control" id="athleteWhatsApp" required>
+            </div>
+            <div class="form-group">
+                <label for="paymentMonth">Mês de Pagamento</label>
+                <select class="form-control" id="paymentMonth" required>
+                    <option value="">Selecione</option>
+                    <option value="Janeiro">Janeiro</option>
+                    <option value="Fevereiro">Fevereiro</option>
+                    <option value="Março">Março</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Maio">Maio</option>
+                    <option value="Junho">Junho</option>
+                    <option value="Julho">Julho</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Setembro">Setembro</option>
+                    <option value="Outubro">Outubro</option>
+                    <option value="Novembro">Novembro</option>
+                    <option value="Dezembro">Dezembro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="feeType">Tipo de Taxa</label>
+                <select class="form-control" id="feeType" required>
+                    <option value="">Selecione</option>
+                    <option value="Mensalidade">Mensalidade</option>
+                    <option value="Taxa de Inscrição">Taxa de Inscrição</option>
+                    <option value="Taxa de Manutenção">Taxa de Manutenção</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="athletePayment">Pagamento Mensalidade</label>
+                <select class="form-control" id="athletePayment" required>
+                    <option value="">Selecione</option>
+                    <option value="pago">Pago</option>
+                    <option value="pendente">Pendente</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar Atleta</button>
+        </form>
+    </section>
 
-    <h2 class="mt-5" id="controle">Controle de Mensalidades</h2>
-    <div class="form-group">
-        <label for="searchAthlete">Pesquisar Atleta</label>
-        <input type="text" class="form-control" id="searchAthlete" placeholder="Digite o nome do atleta...">
-    </div>
-    <table class="table table-bordered mt-3">
-        <thead>
-            <tr>
-                <th>Nome do Atleta</th>
-                <th>Número do WhatsApp</th>
-                <th>Mês de Pagamento</th>
-                <th>Tipo de Taxa</th>
-                <th>Pagamento</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody id="athleteTableBody">
-            <!-- Os dados dos atletas serão adicionados aqui -->
-        </tbody>
-    </table>
-</div>
+    <section aria-labelledby="controle" class="mt-5">
+        <h2 id="controle">Controle de Mensalidades</h2>
+        <div class="form-group">
+            <label for="searchAthlete">Pesquisar Atleta</label>
+            <input type="text" class="form-control" id="searchAthlete" placeholder="Digite o nome do atleta...">
+        </div>
+        <article>
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>Nome do Atleta</th>
+                        <th>Número do WhatsApp</th>
+                        <th>Mês de Pagamento</th>
+                        <th>Tipo de Taxa</th>
+                        <th>Pagamento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="athleteTableBody">
+                    <!-- Os dados dos atletas serão adicionados aqui -->
+                </tbody>
+            </table>
+        </article>
+    </section>
+</main>
 
 <!-- Modal para Histórico de Pagamento -->
-<div class="modal fade" id="paymentHistoryModal" tabindex="-1" role="dialog" aria-labelledby="paymentHistoryModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="paymentHistoryModalLabel">Histórico de Pagamentos</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <ul id="paymentHistoryList"></ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+<aside>
+    <div class="modal fade" id="paymentHistoryModal" tabindex="-1" role="dialog" aria-labelledby="paymentHistoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentHistoryModalLabel">Histórico de Pagamentos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="paymentHistoryList"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</aside>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
